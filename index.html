@@ -20,15 +20,10 @@
 
     <!-- Feature/Project Card (CSS Grid) -->
     <section class="projects-section">
-        <h2>Featured Project</h2>
-        <div class="projects-container">
-            <article class="project-card">
-                <img src="logoImage.png" alt="Web Design Project">
-                <div class="card-badge">Web Design</div>
-                <h3 class="card-title">Responsive design</h3>
-                <p class="card-description">A responsive page built with HTML5 and CSS3.</p>
-                <button class="view-btn">View Project</button>
-            </article>
+        <h2>Featured Projects</h2>
+        <!-- Dynamic container for project cards - populated by JavaScript -->
+        <div class="projects-container" id="projects-container">
+            <!-- Cards will be generated here by JavaScript rendering engine -->
         </div>
     </section>
 
@@ -84,5 +79,7 @@
         </form>
     </section>
 
+    <!-- Load JavaScript rendering engine -->
+    <script src="script.js"></script>
 </body>
 </html>

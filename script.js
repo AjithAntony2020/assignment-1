@@ -63,3 +63,71 @@ const projects = [
 // Log the projects array
 console.log("Projects Data Loaded:", projects);
 console.log("Total Projects:", projects.length);
+
+
+// Initializes the app and renders project cards on DOM load
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM Content Loaded - Initializing rendering engine...");
+    renderProjectCards(projects);
+});
+
+/**
+ * Renders all project cards by iterating through the projects array
+ * and injecting generated HTML into the container
+ * @param {Array} projectsToRender - Array of project objects to render
+ */
+function renderProjectCards(projectsToRender) {
+    const container = document.getElementById('projects-container');
+    
+    if (!container) {
+        console.error("Error: Container with ID 'projects-container' not found!");
+        return;
+    }
+    
+    // Clear existing content
+    container.innerHTML = '';
+    
+    // Check if there are projects to render
+    if (projectsToRender.length === 0) {
+        container.innerHTML = '<p class="no-results">No projects found.</p>';
+        return;
+    }
+    
+    // Iterate through projects and create cards
+    projectsToRender.forEach(project => {
+        const card = createProjectCard(project);
+        container.appendChild(card);
+    });
+    
+    console.log(`Rendered ${projectsToRender.length} project cards`);
+}
+
+/**
+ * Creates a single project card element from project object
+ * @param {Object} project - Project object with properties: id, title, description, category, imageURL, link, tags
+ * @returns {HTMLElement} - The constructed article element for the project card
+ */
+function createProjectCard(project) {
+    // Create the article element (card container)
+    const card = document.createElement('article');
+    card.className = 'project-card';
+    card.setAttribute('data-id', project.id);
+    card.setAttribute('data-category', project.category);
+    
+    // Build the card HTML structure using template literals
+    card.innerHTML = `
+        <img src="${project.imageURL}" alt="${project.title}" class="card-image">
+        <div class="card-badge">${project.category}</div>
+        <h3 class="card-title">${project.title}</h3>
+        <p class="card-description">${project.description}</p>
+        <div class="card-tags">
+            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        </div>
+        <a href="${project.link}" class="view-btn">View Project</a>
+    `;
+    
+    return card;
+}
+
+

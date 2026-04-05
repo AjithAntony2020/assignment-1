@@ -88,7 +88,7 @@ h2 {
 
 .project-card {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr auto auto;
     border-radius: 8px;
     overflow: hidden;
     background-color: white;
@@ -136,6 +136,29 @@ h2 {
     font-size: 0.95rem;
 }
 
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #ecf0f1;
+    color: #555;
+    padding: 0.35rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #3498db;
+    color: white;
+}
+
 .view-btn {
     margin: 1.5rem;
     padding: 0.75rem 1.5rem;
@@ -146,12 +169,29 @@ h2 {
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
     transition: background-color 0.3s ease;
     align-self: end;
 }
 
 .view-btn:hover {
     background-color: #2980b9;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #999;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
 
 /* Mobile Card Layout */
