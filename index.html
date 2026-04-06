@@ -21,6 +21,28 @@
     <!-- Feature/Project Card (CSS Grid) -->
     <section class="projects-section">
         <h2>Featured Projects</h2>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search by title, description, category, or tags..."
+                aria-label="Search projects"
+            >
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="Web Design">Web Design</button>
+            <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+            <button class="filter-btn" data-filter="Full Stack">Full Stack</button>
+            <button class="filter-btn" data-filter="UI/UX Design">UI/UX Design</button>
+        </div>
+
         <!-- Dynamic container for project cards - populated by JavaScript -->
         <div class="projects-container" id="projects-container">
             <!-- Cards will be generated here by JavaScript rendering engine -->
