@@ -80,6 +80,75 @@ h2 {
     margin: 0 auto;
 }
 
+/* Search Bar Styles */
+.search-container {
+    position: relative;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.875rem 2.5rem 0.875rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    color: #999;
+    pointer-events: none;
+    font-size: 1.1rem;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #ecf0f1;
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+ .filter-btn:hover {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -88,7 +157,7 @@ h2 {
 
 .project-card {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr auto auto;
     border-radius: 8px;
     overflow: hidden;
     background-color: white;
@@ -106,8 +175,9 @@ h2 {
     width: 100%;
     max-width: 100%;
     height: auto;
+    max-height: 200px;
     aspect-ratio: 16 / 10;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
@@ -136,6 +206,29 @@ h2 {
     font-size: 0.95rem;
 }
 
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #ecf0f1;
+    color: #555;
+    padding: 0.35rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #3498db;
+    color: white;
+}
+
 .view-btn {
     margin: 1.5rem;
     padding: 0.75rem 1.5rem;
@@ -146,12 +239,31 @@ h2 {
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
     transition: background-color 0.3s ease;
     align-self: end;
 }
 
 .view-btn:hover {
     background-color: #2980b9;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #999;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    display: block;
 }
 
 /* Mobile Card Layout */
