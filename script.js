@@ -9,7 +9,7 @@ const projects = [
         title: "Responsive Website Design",
         description: "A responsive website built with HTML5 and CSS3 that adapts seamlessly to all device sizes.",
         category: "Web Design",
-        imageURL: "https://via.placeholder.com/400x250/3498db/ffffff?text=Web+Design",
+        imageURL: "./assets/webdevImage.png",
         link: "#project1",
         tags: ["HTML", "CSS", "Responsive"]
     },
@@ -18,7 +18,7 @@ const projects = [
         title: "JavaScript Todo App",
         description: "Interactive todo list application with add, edit, and delete functionality using vanilla JavaScript.",
         category: "JavaScript",
-        imageURL: "https://via.placeholder.com/400x250/2ecc71/ffffff?text=Todo+App",
+        imageURL: "./assets/jsIProjectmage.png",
         link: "#project2",
         tags: ["JavaScript", "Interactive", "DOM"]
     },
@@ -27,7 +27,7 @@ const projects = [
         title: "E-Commerce Product Page",
         description: "Modern e-commerce product showcase with dynamic filtering and shopping cart functionality.",
         category: "Full Stack",
-        imageURL: "https://via.placeholder.com/400x250/e74c3c/ffffff?text=E-Commerce",
+        imageURL: "./assets/logoImage.png",
         link: "#project3",
         tags: ["HTML", "CSS", "JavaScript", "UI/UX"]
     }
